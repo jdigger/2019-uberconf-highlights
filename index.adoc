@@ -1,0 +1,1524 @@
+# 2019 UberConf Highlights
+:revealjs_history: true
+:imagesdir: images
+:revealjs_transition: fade
+:revealjs_transitionSpeed: fast
+:customcss: asciidoctor-revealjs.css
+
+image::uber_conf_intro_2019.svg[height=200]
+
+[%notitle]
+## Compiled
+
+Compiled by https://github.com/jdigger/[Jim Moore] based on presentations at https://uberconf.com/[UberConf 2019]
+
+https://github.com/jdigger/2019-uberconf-highlights
+
+[.smaller]
+https://keybase.io/jmoore[keybase.io/jmoore] / http://twitter.com/jdiggerj[@jdiggerj]
+
+## Compression
+
+image::xkcd__Trained_a_Neural_Net.png[role=right, height=500, link="https://xkcd.com/2173/"]
+
+My own proprietary compression algorithm, turning nearly 40 hours of intense content into less than 2 hours...
+
+[.smaller]
+(I'm mixing-and-matching liberally, as well as saying/showing things they often didn't say but were inspired by what they said... Any stupidity is my own.)
+
+
+
+## Themes
+
+* Yaks
+* Shifting Left
+* Dealing with Scale
+* Being and Becoming
+* Teams
+* misc
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Yaks
+
+image::yak_shaving.png[]
+
+[%notitle]
+### Yak Shaving
+
+image::yak_shaving_def.jpg[background, size=contain]
+
+### Blog Posts
+
+https://the-composition.com/a-taxonomy-of-yak-shaving-102da591308b
+
+image::yak_categories.png[height=450]
+
+[%notitle]
+### Black (Attack) Yaks
+
+image::yak_black.png[canvas, size=contain]
+
+### What They Do
+
+Prevent you from moving forward (tests, lint, etc.)
+
+Summon with care and track the attacks ("`developer experience`")
+
+### Tests
+
+Tests are for preventing change, but our job is to make changes.
+
+### Good Tests
+
+Use tests to keep parts of the system stable that need to be stable (e.g. APIs)
+
+Get rid of "`implementation details`" that simply make it harder to change how something works
+
+### TDD vs BDD
+
+1. Language
+** TDD: `assertEquals(count,5)`
+** BDD: `$(count).should_be(5)`
+2. Granularity of Test
+** TDD often focuses on implementation
+** BDD focuses on intent
+
+
+### Coding Standards
+
+* automate
+* automate
+* automate
+* document
+
+### Tracking the Attacks
+
+In Slack, have an attack yak emoji to help track what's frustrating people
+
+You can then do a search for the emoji to see what's causing friction
+
+
+[%notitle]
+### Imperial Yaks
+
+image::yak_imperial.png[canvas, size=contain]
+
+### What They Do
+
+These yaks stack on top of each other, and all need to be shaved
+
+### Example of Imperial Yaks
+
+I start working on a story and realize I need to refactor some code to do it, but it doesn't have any tests. When I start to put them in, I realize I don't understand it, so I go talk to the person who wrote it. As we're reviewing it, we realizes it has a significant bug. Fixing it requires talking to some other teams to let them know what's changing and why. As we're doing that...
+
+### Keep track of what you are doing!
+
+For adult yaks, coordinate with your team/PO/PM, create the Rally stories, etc.
+
+For baby yaks, classic techniques like notes on a pad of paper next to you, stubbing code, etc. are all great.
+
+### Personal Slack
+
+A "`personal Slack channel`" (e.g., `#person-jim-moore`) for keeping track of thoughts, error messages, code snippets, links to other Slack messages/emails/etc.
+
+Nice middle-ground between todo lists and scribbling on paper
+
+In addition to keeping track of your own context (especially if you need to switch contexts), you can invite others to hop in, helping bring them up to speed if you need help
+
+### Neon Yak
+
+image::yak_neon.jpg[canvas, size=contain]
+
+### What they do
+
+The yaks you shave to save "`future me`" and your team, smoothing the road
+
+### "`Leave things better than you found them`"
+
+### Examples
+
+* If you have a problem while using an internal library because you're using it wrong, fix the error message before you've fixed your usage
+* Add more automation to the pipeline
+
+### The value of automation
+
+image::brain_full.jpg[role=right]
+
+"`If you think of these automations as saving time... Pbfft!  That's the least of it. It's about saving space in my and other people's brains`"
+
+
+### "`Generativity`"
+
+The difference in your team’s work with you vs without you
+
+
+[%notitle]
+### Trim Yak
+
+image::yak_trim.png[canvas, size=contain]
+
+### What they do
+
+"`Personal productivity`"
+
+learning a tool, learning the system, IDE setup, etc.
+
+### "`Learning the tool`"
+
+On learning how git works, "`It went from being a spell to being a technology`"
+
+### Timeboxing
+
+Timebox your yak shaving
+
+Pick the time-box before you start! (good thing to post in the personal Slack channel)
+
+### Learn the Tech, Systems, Business
+
+*DO NOT* minimize the business complexity!!
+
+The more you can transfer from what the people deal with into the computer, the better!
+
+### Write It Down!
+
+"`More than once, I've googled a question and it's taken me to my own blog. Gosh, thank you, 3-year-ago me!`"
+
+[.smaller]
+(Blogging helps get you jobs!)
+
+
+### Yak Racing
+
+image::yak_racing.jpg[background, size=contain]
+
+[%notitle]
+### Yak Racing
+
+Keeping yak benefits to yourself
+
+**BAD!!**
+
+None of this is a competition
+
+[%notitle]
+### Royal Yak
+
+image::yak_royal.png[canvas, size=contain]
+
+### What they do
+
+Talk with others
+
+### Helps with Conway's law
+
+Who knows about what?
+
+* Business systems, tools, tech, etc.
+* Asking people questions makes them like you more
+** as explained in https://smile.amazon.com/How-Win-Friends-Influence-People/dp/0671027034[How To Win Friends and Influence People]
+
+### Helps with Conway's law
+
+What do we each need to know?
+
+Take the effort to get everyone on the same page
+
+### Helps with Conway's law
+
+As a leader/influencer, make sure you are clear and proving that "`Yes, I want to know`"
+
+* need to know when things are going wrong/well
+* "`psychological safety`"
+* Have you thought about...?
+
+### Strong opinions, loosely held
+
+Generally a good thing, but can encourage others to be quiet
+
+### Level up the team
+
+Have you best people sit back and let the junior people make small mistakes -- that's how you gain experience
+
+### Level up the team
+
+Not only do you save the time/energy of your most "`powerful`" people for the big problems, but it means you have a much more powerful TEAM for tackling the big problems
+
+[.smaller]
+(Famous fictional examples: Justice League; X-Men's Danger Room; any successful RPG guild)
+
+### Questions are a sign of growing competence
+
+[%notitle]
+### Golden Yak
+
+image::yak_golden_1.png[canvas, size=contain]
+
+[%notitle]
+### Golden Yak
+
+image::yak_golden_2.png[canvas, size=contain]
+
+### What they do
+
+Creates virtuous cycles, changing both behavior and your reality
+
+[%notitle]
+### Reality Shifting
+
+"`Sometimes when you follow a problem all the way down -- how do I make this easier? ... now how do I make that easier? ... now what if this were no work at all? you find a different universe. Making something sufficiently easier can produce a sea change, which changes our behavior.`"
+
+### Examples
+
+TDD, Continuous Delivery, Containers, etc.
+
+### We shape our tools, and our tools shape us
+
+### Personal Example: Git
+
+[%notitle]
+### Personal Example: Git
+
+When I first started using git, I made the understandable mistake of treating it like just another version control tool, with some cool features
+
+[%notitle]
+### Personal Example: Git
+
+It had some strange commands and ways of working, but eventually I learned the tool
+
+
+[%notitle]
+### Personal Example: Git
+
+After really pushing it to its limits a bunch of times, I realized that it enables a fundamentally different way of viewing all of software development and team collaboration
+
+### We shape our tools, and our tools shape us
+
+[%notitle]
+### Golden Yak
+
+image::yak_golden_3.png[canvas, size=contain]
+
+[%notitle]
+### Yak Conclusion
+
+"Yaks are a part of life and of progress...
+
+Proven usefulness: look for it. Don’t spend a ton of time until you’ve hit a problem a ton of times. Track your yaks and timebox your attacks. Remember it’s about generativity, not all about you. Fill potholes, and shave a little more so your team can share the benefit."
+
+[%notitle]
+### Yak Conclusion
+
+"`Play: Stay curious. Especially learn about the system you work in, both socially and technically. Learn a little extra each time, about your tools, your system, and your companions on this journey. Interact and automate for the wisdom; for changing us, and thereby the world.`"
+
+[%notitle]
+### Yak Conclusion
+
+image::yak.jpeg[canvas, size=contain]
+
+"`Yaks. They’re so much more than hair.`"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Shifting Left
+
+image::shift_left.png[]
+
+
+### Testing
+
+* https://en.wikipedia.org/wiki/Shift-left_testing
+* https://smartbear.com/learn/automated-testing/shifting-left-in-testing/
+
+### Remember These Archaic Objections to "`Test Left`"?
+
+[%notitle]
+### Test Left Objections
+
+Testing? There's another team for that
+
+[%notitle]
+### Test Left Objections
+
+We can't add testing to the dev process: That'll just slow development down
+
+[%notitle]
+### Test Left Objections
+
+I'm being judged based on how fast I can get features developed; testing is another team's problem
+
+[%notitle]
+### Test Left Objections
+
+My devs already have a zillion things they need to master, and you want to adding testing tools and techniques to that?!?
+
+[%notitle]
+### Test Left Objections
+
+image::shya_right.jpg[background, size=contain]
+
+### Testing Now A Core Dev-Team Concern
+
+* TDD/TFD/BDD
+* Continuous Integration (CI)
+* Embedded QA
+
+### Shift Left Operations
+
+Same as Testing, but for Operations 🙂
+
+[%notitle]
+### DevOps
+
+The "`DevOps`" movement started bringing operational concerns to development
+
+### Scaling Operations
+
+Increasingly we're moving to a world of
+
+* https://en.wikipedia.org/wiki/High_availability[99.9% -> 99.999% uptime]
+* much wider variety of systems we connect to and connect to us
+* everything's going distributed -- across the planet (the https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing[Fallacies of Distributed Computing] are just becoming more acute)
+* larger security attack surfaces
+* "`remote`" teams
+
+[%notitle]
+### Simian Army
+
+image::simianarmy.png[background, size=contain]
+
+
+### Standardizing Dev Through Ops
+
+* Containers (esp. Docker)
+* Container Orchestration (esp. Kubernetes [K8s])
+
+[%notitle]
+### Kub Trends
+
+image::NFJS_Kubernetes_Fundamentals_Trends.jpg[background, size=contain]
+
+
+[%notitle]
+### Containers
+
+image::NFJS_Container_Arch.jpg[background, size=contain]
+
+
+### Container Notes
+
+* Effectively they are all based on Linux
+* Because there is no OS to start, they are as efficient as your app can possibly be
+* Tools like https://github.com/GoogleContainerTools/jib[Google's Jib] make creating containers crazy-easy
+* Java has been getting a lot of lovin`' lately: from https://blogs.oracle.com/java/module-system-in-jdk-9[JDK 9 Modules] to https://www.graalvm.org/[GraalVM], it's getting possible to have the efficiencies C++ but keep the niceties of Java
+
+
+### Container Orchestration
+
+The market has essentially shaken out to two:
+
+* Docker Compose/Swarm - fast and easy
+* Kubernetes - complex and capable
+
+
+### Docker Compose
+
+image::micro-frontends_docker-compose_yml.jpg[role=right]
+
+Example for the micro-frontends we'll see later
+
+[%notitle]
+### Docker Compose
+
+image:micro-frontends_2-up.jpg[]
+
+
+### Microservices
+
+It's considered best-practice to run exactly one thing per container (generally this means microservices)
+
+With orchestration, it becomes practical to really break them apart and coordinate them
+
+
+### Kubernetes becomes the computer
+
+
+
+[%notitle]
+### Kub Arch
+
+image::NFJS_Kubernetes_Fundamentals_Arch.jpg[background, size=contain]
+
+
+### Learning Kubernetes
+
+https://katacoda.com/courses/kubernetes
+
+image::katacoda-logo-full-body.png[]
+
+
+### Typical Modern Execution Layers
+
+* Functions (code)
+* Container/Managed Environment (JVM, CLR, Node, etc)
+* Virtualization (CPU, storage, networking, etc.)
+* Hardware
+
+
+### Typical Modern Execution Layers
+
+* Functions (code)
+* Container/Managed Environment (JVM, CLR, Node, etc)
+* Virtualization (CPU, storage, networking, etc.)
+* [.line-through]#Hardware#
+
+
+### Typical Modern Execution Layers
+
+* Functions (code)
+* Container/Managed Environment (JVM, CLR, Node, etc)
+* [.line-through]#Virtualization (CPU, storage, networking, etc.)#
+* [.line-through]#Hardware#
+
+
+### Typical Modern Execution Layers
+
+* Functions (code)
+* [.line-through]#Container/Managed Environment (JVM, CLR, Node, etc)#
+* [.line-through]#Virtualization (CPU, storage, networking, etc.)#
+* [.line-through]#Hardware#
+
+
+### Typical Modern Execution Layers
+
+* Functions (code) *- ??*
+* [.line-through]#Container/Managed Environment (JVM, CLR, Node, etc)#
+* [.line-through]#Virtualization (CPU, storage, networking, etc.)#
+* [.line-through]#Hardware#
+
+
+### What if we want to "`deploy`" raw code?
+
+What could that look like?
+
+
+### `console.log('froble');`
+
+*Q:* NodeJS v10.16? NodeJS 0.12.18? Nashhorn?
+
+*A:* Don't care. As long as it runs ES5, not my problem!
+
+
+### `console.log('froble');`
+
+*Q:* How many instances of NodeJS are running? What are the resources set aside for it (RAM, CPU, storage, etc.)?
+
+*A:* Don't care. My code is small, so pretty much anything works.
+
+
+[%notitle]
+### FaaS
+
+That would let us go (*_BUZZWORD ALERT_*) "`servlerless`" by running our Function as a Service (FaaS)
+
+There's still a "`server`", but we're so far abstracted away from it that it's no longer our problem
+
+
+### Basic Idea
+
+[source, bash]
+----
+        $ echo 'console.log("froble");' > code.js && \
+          docker run -it --rm -v "$PWD":/usr/src/app \
+            -w /usr/src/app node:12 node code.js
+----
+
+
+### "`Serverless`"
+
+* Run a standardized environment (e.g., NodeJS)
+* Inject the code to run
+
+Providing the capability for production is of course much more complex, but they are all based on this
+
+
+### FaaS Attributes
+
+* *Perfect for burstable workloads of short-lived logic*
+* Invoked by triggers: event, cron, PubSub, etc.
+* Transparent scaling/infrastructure
+* Only pay for actual execution, not it sitting idle
+
+
+### Back to Container Orchestration...
+
+
+[%notitle]
+### Pods
+
+image::NFJS_Kubernetes_Pods.jpg[background, size=contain]
+
+
+[%notitle]
+### Pod Composites
+
+image::NFJS_Kubernetes_Pod_Composites.jpg[background, size=contain]
+
+
+
+### Static Analysis
+
+* Shift left as much as possible: fix formatting before stupid merge conflicts, common mistakes before PRs, security issues before deployment, etc
+* If you make them attack yaks, don't endanger developer experience; otherwise make sure you're tracking *_and using_* trends (e.g., SonarQube)
+* Most major linters have IDE plugins, keeping their cost marginal
+
+### Some Lesser-Known Gradle Linters
+
+* OWASP - https://plugins.gradle.org/plugin/org.owasp.dependencycheck
+* Outdated dependencies - https://plugins.gradle.org/plugin/com.github.ben-manes.versions
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Dealing with Scale
+
+image::tub2pool.png[]
+
+
+
+### Same, but very different
+
+Often, the same thing is different at different scale
+
+* Virtual Machines vs Docker
+* Sprint Releases vs Continuous Delivery
+* http://llewellynfalco.blogspot.com/2014/05/test-first-vs-test-after.html[Test After vs Test First]
+
+
+
+### Java Fibers
+
+Project Loom: https://cr.openjdk.java.net/~rpressler/loom/Loom-Proposal.html
+
+### Number of "`useful`" threads
+
+```
+        Threads <= (# of cores) / ( 1 - blocking factor )
+```
+
+[%notitle]
+### Number of "useful" threads
+
+```
+        Threads <= (# of cores) / ( 1 - blocking factor )
+```
+
+Where:
+
+* `0 < blocking factor < 1`
+** computational intensive is closer to 0
+** I/O intensive is closer to 1
+
+
+
+[%notitle]
+### Incentives
+
+"`A fun part of getting on any large project is getting an 87 page document dropped on you and in at least three places it says '`Call Kathy`'.`"
+
+[%notitle]
+### Incentives
+
+If it takes a year to come up to speed, you're doing it wrong.  Break it up.
+
+### Hypothesis Driven Development
+
+https://www.thoughtworks.com/insights/blog/how-implement-hypothesis-driven-development
+
+* We believe <this change>
+* Will result in <this outcome>
+* We will know we have succeeded when <we see a X change in this metric>
+
+[%notitle]
+### Leverage Architecture Decision Records To Emphasize The Why Over the How
+
+Leverage Architecture Decision Records (ADRs) to emphasize the why over the how
+
+http://thinkrelevance.com/blog/2011/11/15/documenting-architecture-decisions
+
+[%notitle]
+### ADR descr
+
+image::ADR_descr.png[background, size=contain]
+
+[%notitle]
+### Statements
+
+Stored as close to implementatin as possible (e.g., an `"ADRs"` directory in the source-code repo)
+
+"`We will...`", not "`I think`" or "`We should`" or anything wishy-washy
+
+[%notitle]
+### ADR example
+
+image::ADR_example.jpg[background, size=contain]
+
+[%notitle]
+### Automate enforcement as much as possible
+
+image::arch_fitness.jpg[background, size=contain]
+
+[%notitle]
+### Compliance
+
+Add "`Measurements`" to verify both that it's working and compliance
+
+Automate enforcement as much as possible
+
+[%notitle]
+### Measurement
+
+image::arch_measurement.jpg[background, size=contain]
+
+
+[%notitle]
+### Arch Unit
+
+A JUnit way to enforce architectural compliance is with https://www.archunit.org/
+
+[%notitle]
+### Arch Unit Example
+
+image::arch_unit_example.jpg[background, size=contain]
+
+
+### So you want microservices?
+
+[%notitle]
+### Business Drivers
+
+image::Essential_Architecture_Practices_drivers.jpg[background, size=contain]
+
+[%notitle]
+### This tall
+
+image::ms_this_tall.png[role=right, height=200]
+
+Microservices an enormous amount of pain if your organization isn't capable of dealing with them.
+
+Can you do product/feature teams? Monitor/manage hundreds of instances as easily as one? Rapid provisioning? Fully automated testing and continuous deployment?
+
+
+### Migrating to Microservices
+
+[%notitle]
+### Migrating to Microservices
+L.O.E.: "`Is it a golfball, a basketball, or an airliner?`"
+
+image:Golf_ball.svg[height=10]
+image:Basketball.png[height=50]
+image:Boeing747.jpg[height=550]
+
+[%notitle]
+### Microservice Roadmap
+
+image::Microservices_Migration_Patterns_roadmap.jpg[background, size=contain]
+
+### "Flatten" the hills
+
+where packages define hills, and subpackages define new strata
+
+image::Microservices_Migration_Patterns_strata.jpg[]
+
+### Flatten strategies
+
+image::Microservices_Migration_Patterns_existing.jpg[]
+
+### Flatten - Moving Down
+
+image::Microservices_Migration_Patterns_exisiting_clean.jpg[height=80]
+
+Bring subpackages "down" into the parent, and classes in parent package into its own package
+
+* a.cust.notification
+* a.cust.preferences
+* a.cust.info
+
+### Flatten - Moving Up
+
+image::Microservices_Migration_Patterns_exisiting_clean.jpg[height=80]
+
+Raise the valleys if you can't lower the peaks
+
+* a.cust.notification.sms
+* a.cust.notification.email
+* a.cust.notification.letter
+
+
+### Flatten - Shared
+
+image::Microservices_Migration_Patterns_exisiting_clean.jpg[height=80]
+
+If a package is for classes that are shared between packages, mark it as explicitly "`shared`"
+
+* a.cust.notification
+* a.cust.preferences
+* a.cust.shared
+
+
+### Identify Component Dependencies
+
+[%notitle]
+### Identify Component Dependencies Directions
+
+While both incoming and outgoing matter...
+
+[%notitle]
+### Most Important direction
+
+*MOST* important is *INCOMING*
+
+[%notitle]
+### Most Important direction
+
+"`Who breaks if this does?`"
+
+
+[%notitle]
+### Identify Component Dependencies - Clean
+
+image::Microservices_Migration_Patterns_deps_clean.jpg[background, size=contain]
+
+
+[%notitle]
+### Identify Component Dependencies - No Deps
+
+image::Microservices_Migration_Patterns_deps_none.jpg[background, size=contain]
+
+
+[%notitle]
+### Identify Component Dependencies - One Dep
+
+image::Microservices_Migration_Patterns_deps_one.jpg[background, size=contain]
+
+
+[%notitle]
+### Identify Component Dependencies - Many Deps
+
+image::Microservices_Migration_Patterns_deps_many.jpg[background, size=contain]
+
+
+### Identify Component Groups (Domains)
+
+[%notitle]
+### Identify Component Groups (Domains)
+
+image::Microservices_Migration_Patterns_domains.jpg[background, size=contain]
+
+### Add Access Façade
+
+[%notitle]
+### Add Access Facade
+
+image::Microservices_Migration_Patterns_facade.jpg[background, size=contain]
+
+### Macro Services
+
+[%notitle]
+### Macro Services
+
+image::Microservices_Migration_Patterns_macrosrv.jpg[background, size=contain]
+
+### Micro Services
+
+[%notitle]
+### What to convert
+
+It's expensive to convert to microservices, and they are more work to maintain
+
+[%notitle]
+### What to convert
+
+It's generally not worth it unless there is
+
+* constant churn on that functionality
+* the need to (dymanically) scale it beyond what you can do traditionally
+
+[%notitle]
+### churn files
+
+Tip: easy way to see what files have a lot of churn
+[source, bash]
+--
+git log --pretty=format: --name-only | sort | uniq -c | \
+  sort -rg | head -10
+--
+
+[.smaller]
+(of course that's a rough measure that works best if you're rebasing, squashing, etc.)
+
+
+[%notitle]
+### Micro Services
+
+image::Microservices_Migration_Patterns_micro.jpg[background, size=contain]
+
+
+
+
+
+[%notitle]
+### Observability Why
+
+image::Meshing_Around_with_Observability_Why.jpg[background, size=contain]
+
+[%notitle]
+### Observability Pillars
+
+image::Meshing_Around_with_Observability_Pillars.jpg[background, size=contain]
+
+[%notitle]
+### Observability Perils
+
+image::Meshing_Around_with_Observability_Perils.jpg[background, size=contain]
+
+
+[%notitle]
+### Observability Perils
+
+image::Meshing_Around_with_Observability_Refs.jpg[background, size=contain]
+
+
+[%notitle]
+### Istio
+
+image::Istio.jpg[background, size=contain]
+
+
+
+
+### Micro Frontends
+
+[%notitle]
+### Monolith Frontend
+
+image::monolith-frontback-microservices.png[background, size=contain]
+
+[%notitle]
+### Monolith Frontend
+
+image::microfrontend-verticals.png[background, size=contain]
+
+### Excellent Articles About the Ideas
+
+* https://martinfowler.com/articles/micro-frontends.html
+* https://micro-frontends.org/
+
+[%notitle]
+### Looks Like A Nice Library for Doing It
+
+Looks like some nice libraries for doing micro frontends
+
+* https://single-spa.js.org/
+* https://www.mosaic9.org/
+
+### Excellent Example of Microfrontends and Docker-Compose
+
+https://github.com/neuland/micro-frontends/tree/master/2-composition-universal
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Being and Becoming
+
+image:plato_aristotle.jpg[]
+
+### Symmathesy
+
+(Tuesday's keynote by Jessica Kerr)
+
+### Truisms
+
+[%step]
+* Right place, right time
+* It's who you know
+
+### Reductions
+
+[%notitle]
+### Reductionism
+
+image::Reductionism_by_Merriam-Webster.jpg[background, size=contain]
+
+
+### The Benefit and Problem With "`Engineering`"
+
+We're taught to take things apart, and when we put the pieces together again in the right way, everything works
+
+[%notitle]
+### The Problem With "`Engineering`"
+
+If it doesn't work, we did it wrong
+
+
+### Resources: A Sum of Its Parts
+
+image:gold-bars.png[height=200px]
+
+More is better...
+
+[%notitle]
+### Take Apart 1
+
+Trivial to take apart and put back together
+
+
+### Systems: A Product of Its Integractions
+
+image:disassembly04.jpg[height=200px]
+
+You need to make sure you have exactly the right combination of pieces interacting in the right way
+
+
+[%notitle]
+### Take Apart 2
+
+Much harder to take apart and put back together, but you can do it an infinite number of times and get the same result
+
+### This is the basis of industrialization
+
+Understanding how to do that right has built the Modern world
+
+[%notitle]
+### Being Becoming
+
+But what about things that are much less about "`being`" and more about "`becoming`"?
+
+[%notitle]
+### Different Systems
+
+image::AndNowForSomethingCompletelyDifferent-Z8Wfkuk7-subtitled.jpg[background, size=contain]
+
+
+### Events, My Boy. Events
+
+(talk by Tim Berglund)
+
+
+### Heraclitus
+
+As quoted by Plato in Cratylus:
+
+"`Everything changes and nothing remains still... you cannot step twice into the same stream`"
+
+image::Heraclitus.jpg[height=450px]
+
+
+[%notitle]
+### Regular Programming
+
+image::regular_programming.jpg[background, size=contain]
+
+
+### Complexity
+
+[%step]
+* The sum of its parts: *Aggregate*
+* A product of its parts and interactions: *System*
+* ... is there more?
+
+### Complexity
+
+* The sum of its parts: *Aggregate*
+* A product of its parts and interactions: *System*
+* The parts are the product of past interactions: *Symmathesy*
+
+[%notitle]
+### Symmathesy Parts
+
+*Symmathesy*
+
+"`sym`" - "`together`"
+
+"`mathesi`" - "`learning`"
+
+
+### Classic Examples of Symmathesy
+
+* Living things
+    ** organisms
+    ** evolution
+* Ecosystems
+* Economies
+
+
+### Complexity
+
+[%step]
+* *Aggregate* - Additive
+* *System* - Multiplicative
+* *Symmathesy* - Exponential
+
+[%notitle]
+### Measurement
+
+How do you measure...
+
+* ...the way the parts are changed by their interactions?
+* ...how it affects not just the piece, but the whole?
+
+[%notitle]
+### Changes
+
+...especially since the parts are being changed by the changes of the other parts, which changes the whole; and the changes to the whole change the parts?
+
+
+[%notitle]
+### Measurement
+
+Are the systems and procedures we build pretending the unmeasured (unmeasurable?) doesn't exist?
+
+
+[%notitle]
+### Measurement
+
+We'll get back to this when we talk about Teams...
+
+
+### But now back To those philosophers
+
+* Plato - Universals (Idealism)
+* Aristotle - Particulars (Realism)
+* William of Ockham - Experience (Nominalism)
+
+### What's Our Philosophy In What We Build?
+
+For example, how do we think of our systems?
+
+* If you care about "`What *_is_* _(the state of things)_?`" then you build around databases
+* If you care about "`What is *_happening_* _(to the state of things)_?`" then you build around events
+
+
+[%notitle]
+### Modeling
+
+What most accurately models what we need to know?
+
+Have we *_defined_* the problem correctly for us to even know what it is we need to model?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Teams
+
+image::2019_womens_worldcup_winners.jpg[]
+
+### Teams are made of learning/adapting people
+
+[%notitle]
+### Teams are made of learning/adapting people
+
+In other words, teams themselves are a symmathesy
+
+[%notitle]
+### Hillside Group
+
+image::camerata_hillside.jpg[background, size=contain]
+
+[%notitle]
+### Springsource
+
+image::camerata_springsource.jpg[background, size=contain]
+
+### Great Teams Make Great People
+
+### Focus on the Team
+
+avoid "`personal performance plans`" -- focus on the team
+
+
+[%notitle]
+### Mental Model
+
+Everyone has an incomplete (a.k.a. "`wrong`") model of the system in their head.
+
+That's okay.
+
+Especially if you're cultivating Trim and Royal yaks...
+
+
+[%notitle]
+### It's Much Easier to Build Than Learn
+
+It's much easier to build a mental model than learn one
+
+[%notitle]
+### It's Much Easier to Build Than Learn
+
+That's why the creator of a system always understands it better than anyone else...
+
+The mental model was literally constructed in their head as they were building the system.
+
+
+### Refactoring
+
+Refactoring is a great way to build up a mental model of the code...
+
+...but it destroys the understanding anyone else had
+
+[%notitle]
+### Refactoring
+
+Even if it's easier to learn now than before, you need to be aware of that cost.
+
+It may be best to toss the refactor, just like you did to tests you wrote for probing how it works.
+
+
+
+### Mob Programming
+
+It's not about getting the most out of your team, but the best out of your team
+
+[%notitle]
+### Mob Programming
+
+As long as everyone is contributing or learning, the mob is the right size.
+
+If someone is bored, it's too big. If we're stuck on something, it's too small.
+
+[%notitle]
+### Mob Programming
+
+Many ideas? Do them all, then decide.  Implementation generally makes it clear
+
+
+### Sticky Notes
+
+http://agilitrix.com/2013/10/how-to-go-fast-with-sticky-notes/
+
+Rules:
+
+* one idea
+* few words
+* easy to read; use sharpies, print
+* capital letters
+
+
+
+// ### 10x
+// What does "10x Developer" look like?
+// The power of compound interest. Lots of small improvements > a single large improvement
+
+
+### Documentation as part of your Definition of Done
+
+"`But the unit test IS the documentation`"
+
+* unit tests -> how to USE the code
+* documentation -> how to LEARN the code
+
+[%notitle]
+### Documentation as part of your Definition of Done
+
+Shifts the ego to where if you find yourself explaining why your API is crappy, you figure out how to make it better to avoid saying "`I'm an idiot`"
+
+### Training the team
+
+A nice tool is https://katacoda.com/learn since it gives you that easy, flexible workspace
+
+// ### Code Reviews
+// https://smartbear.com/blog/collaborate/the-case-for-using-code-review-checklists/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Misc
+
+### Simple HTTP status code testing
+
+* http://httpstat.us/200
+* http://httpstat.us/403
+
+
+
+### Lunch
+
+* 1-to-1
+* Get out of the office; people talk more easily
+* 90m; let conv end on their own
+* Let them choose
+* don't talk about work
+* explore different people
+* pay
+
+
+
+
+
+
+### Don't use >
+
+Don't use the greater than sign, and follow the number line
+
+[%notitle]
+### Don't use >
+
+```
+                       5 < x && x < 10
+```
+
+NOT
+
+```
+                       x < 10 && x > 5
+                       x >  5 && x < 10
+```
+
+or any other combination
+
+[%notitle]
+### Don't use >
+
+Makes it MUCH more consistent and easier to reason about in ways we learned since 1st grade
+
+http://llewellynfalco.blogspot.com/2016/02/dont-use-greater-than-sign-in.html
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Appendix
+
+### Images
+[.appdx-2col]
+--
+* gold bars - https://www.theshugarshack.com/shop-list/24-carrot-gold-bars
+* disassembled clock - https://www.designboom.com/art/todd-mclellan-disassembly/
+* Data injured - https://memory-alpha.fandom.com/wiki/Thine_Own_Self_(episode)?file=Data_injured.jpg
+* completely different - https://montypython.gifglobe.com/scene/?frame=AndNowForSomethingCompletelyDifferent-Z8Wfkuk7
+* Hericlitus - https://en.wikipedia.org/wiki/File:Raphael_School_of_Athens_Michelangelo.jpg
+* Women's World Cup Winners - https://www.vox.com/2019/7/7/20685183/us-womens-soccer-team-fifa-world-cup-title-2019-france-vs-netherlands "Richard Heathcote/Getty Images"
+* bathtub - https://commons.wikimedia.org/wiki/File:Bathtub_(leg_style).jpg
+* Swimming pool - https://www.flickr.com/photos/lash9420/7505370490
+* yak that is shaving - Ren & Stimpy show
+* yak shaving definition - https://twitter.com/gabrielkrieshok/status/1006154903369256960
+* all other yaks - https://the-composition.com/a-taxonomy-of-yak-shaving-102da591308b
+* Katacoda logo - https://katacoda.com
+* monolith-frontback-microservices & microfrontend-verticals - https://micro-frontends.org/
+* slide screen-caps for K8s and Observability - Jonathan Johnson; twitter.com/javajonjohn
+* golf ball - https://commons.wikimedia.org/wiki/File:Golf_ball.svg
+* basketball - https://commons.wikimedia.org/wiki/File:Basketball.png
+* airliner - https://commons.wikimedia.org/wiki/File:Boeing747.jpg
+* slide screen-caps for architecture/microservice patterns - Mark Richards; http://wmrichards.com
+* Must be this tall - https://www.martinfowler.com/bliki/MicroservicePrerequisites.html
+--

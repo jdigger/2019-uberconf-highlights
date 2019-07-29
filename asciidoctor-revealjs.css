@@ -1,0 +1,15 @@
+.line-through { text-decoration: line-through }
+
+.reveal section img {
+    background: inherit;
+    border: inherit;
+}
+
+.smaller {
+    font-size: 0.7em;
+}
+
+.appdx-2col ul {
+    column-count: 2; -webkit-column-count: 2; -moz-column-count: 2;
+    font-size: small;
+}

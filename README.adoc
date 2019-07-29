@@ -1,0 +1,31 @@
+# README
+
+## Install the gems into the project
+
+```
+$ bundle config --local github.https true
+$ bundle --path=.bundle/gems --binstubs=.bundle/.bin
+```
+
+Optional: Copy or clone reveal.js presentation framework. Allows you to modify themes or view slides offline.
+
+```
+$ git clone -b 3.8.0 --depth 1 https://github.com/hakimel/reveal.js.git
+```
+
+## Rendering the AsciiDoc into slides
+
+Create content in a file (\*.adoc, \*.ad, etc.). See examples in Syntax Examples section to get started.
+
+## Generate HTML presentation from the AsciiDoc source
+
+```
+$ bundle exec asciidoctor-revealjs \
+    -a revealjsdir=https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0 index.adoc
+```
+
+If you did the optional step of having a local reveal.js clone you can convert AsciiDoc source with
+
+```
+$ bundle exec asciidoctor-revealjs index.adoc
+```
