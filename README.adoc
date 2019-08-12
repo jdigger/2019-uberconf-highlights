@@ -1,5 +1,7 @@
 # README
 
+The presentation can be viewed at https://jdigger.github.io/2019-uberconf-highlights/
+
 ## Install the gems into the project
 
 ```
